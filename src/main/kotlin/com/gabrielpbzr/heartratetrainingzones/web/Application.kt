@@ -4,17 +4,22 @@ import com.gabrielpbzr.heartratetrainingzones.domain.Gender
 import com.gabrielpbzr.heartratetrainingzones.usecases.CalculateHeartRateTrainingZones
 import io.javalin.Javalin;
 import io.javalin.apibuilder.ApiBuilder.*
+import io.javalin.plugin.rendering.template.JavalinVelocity
+import org.apache.velocity.app.VelocityEngine
 import org.slf4j.LoggerFactory
 import java.lang.IllegalArgumentException
 import java.time.LocalDate
 
 class Application {
     fun run() {
+        //initTemplateEngine()
         val logger = LoggerFactory.getLogger("HeartTrainingZonesApp")
-        val app = Javalin.create();
+        val app = Javalin.create() {
+            javalinConfig -> javalinConfig.addStaticFiles("static")
+        };
 
         app.routes {
-            get("/") { ctx -> ctx.render("views/main-layout.vm") }
+            get("/") { ctx -> ctx.render("views/index.vm", mapOf("title" to "Início")) }
 
             get("/trainingzones") { ctx ->
                 try {
@@ -48,5 +53,12 @@ class Application {
             return Integer.parseInt(System.getenv("PORT"))
         }
         return 9000
+    }
+
+    private fun initTemplateEngine() {
+        val velocityEngine = VelocityEngine()
+        velocityEngine.setProperty("velocimacro.library", "src/main/resources/views/main-layout.vm")
+        velocityEngine.init()
+        JavalinVelocity.configure(velocityEngine)
     }
 }
