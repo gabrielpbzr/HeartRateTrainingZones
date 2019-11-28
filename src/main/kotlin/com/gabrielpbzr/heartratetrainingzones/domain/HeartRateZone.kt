@@ -2,7 +2,7 @@ package com.gabrielpbzr.heartratetrainingzones.domain;
 
 import java.lang.IllegalArgumentException
 
-data class HeartRateZone(private val name: String, private val minimum: Int, private val maximum: Int) {
+data class HeartRateZone(val name: String, val minimum: Int, val maximum: Int) {
     init {
         when {
             minimum > maximum -> throw IllegalArgumentException("Maximum value should be greater than minimum value")
