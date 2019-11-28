@@ -14,7 +14,7 @@ class Application {
         val app = Javalin.create();
 
         app.routes {
-            get("/") { ctx -> ctx.result("Hello World") }
+            get("/") { ctx -> ctx.render("views/main-layout.vm") }
 
             get("/trainingzones") { ctx ->
                 try {
@@ -28,7 +28,7 @@ class Application {
                         }
                     }
                     val trainingZones = useCase.calculateTrainingZonesForUser(birthDate, gender)
-                    val params = mapOf("zones" to trainingZones)
+                    val params = mapOf("zones" to trainingZones, "title" to "Resultados")
                     //ctx.json(params);
                     ctx.render("views/trainingzones.vm", params)
                 } catch (re : RuntimeException) {
