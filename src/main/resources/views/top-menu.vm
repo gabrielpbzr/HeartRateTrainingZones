@@ -1,0 +1,5 @@
+<div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a href="/" class="navbar-brand">HRTZ</a>
+    </div>
+</div>
