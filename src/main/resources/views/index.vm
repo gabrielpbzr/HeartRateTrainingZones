@@ -1,8 +1,10 @@
 #parse('views/main-layout.vm')
 #@mainLayout()
-    <div class="jumbotron">
-        <h1 class="display-3">HRTZ</h1>
-        <p class="lead">Descubra os seus níveis de esforço e melhore o seu treino</p>
-        <a href="calcular-zonas" class="btn btn-primary">Descobir minhas zonas de treino</a>
-    </div>
+    <main class="main">
+        <div class="jumbotron">
+            <h1 class="display-3">HRTZ</h1>
+            <p class="lead">Descubra os seus níveis de esforço e melhore o seu treino</p>
+            <a href="calcular" class="btn btn-primary">Descobir minhas zonas de treino</a>
+        </div>
+    </main>
 #end

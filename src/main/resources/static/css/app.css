@@ -4,4 +4,13 @@
     font-size: 0.95em;
     text-align: center;
     background: #eeeeee;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.main {
+    padding-top: 32px;
+    padding-bottom: 32px;
 }

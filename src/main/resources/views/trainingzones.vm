@@ -1,24 +1,40 @@
 #parse('views/main-layout.vm')
 #@mainLayout()
 <header>
-    <h1>Training zones</h1>
+    <h1>Resultados</h1>
 </header>
-<table>
-    <thead>
-    <tr>
-        <th>Zone</th>
-        <th>Min. (bpm)</th>
-        <th>Max. (bpm)</th>
-    </tr>
-    </thead>
-    <tbody>
-        #foreach ($zone in $zones)
-        <tr>
-            <td>${zone.name}</td>
-            <td>${zone.minimum}</td>
-            <td>${zone.maximum}</td>
-        </tr>
-        #end
-    </tbody>
-</table>
+    <section>
+        <h2>Seus dados</h2>
+        <dl>
+            <dt>Idade:</dt>
+            <dd>${age} anos</dd>
+            <dt>Sexo:</dt>
+            #if ($gender == "M")
+                <dd>Masculino</dd>
+            #else
+                <dd>Feminino</dd>
+            #end
+        </dl>
+    </section>
+    <section>
+        <h2>Suas zonas de treino</h2>
+        <table class="table">
+            <thead>
+            <tr class="table-active">
+                <th>Zone</th>
+                <th>Min. (bpm)</th>
+                <th>Max. (bpm)</th>
+            </tr>
+            </thead>
+            <tbody>
+                #foreach ($zone in $zones)
+                <tr>
+                    <td>${zone.name}</td>
+                    <td>${zone.minimum}</td>
+                    <td>${zone.maximum}</td>
+                </tr>
+                #end
+            </tbody>
+        </table>
+    </section>
 #end

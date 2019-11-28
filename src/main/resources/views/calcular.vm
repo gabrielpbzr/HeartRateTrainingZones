@@ -1,0 +1,25 @@
+#parse('views/main-layout.vm')
+#@mainLayout()
+<main class="main">
+    <header>
+        <h1>Calcular zonas de treino</h1>
+    </header>
+    <p>Preencha o formulário abaixo com as suas informações para obter as suas zonas de treino cardíaco</p>
+    <form method="post" action="/zonas">
+        <input type="hidden" name="token" value="${csrfToken}"/>
+        <div class="form-group">
+            <label for="birthdate">Data de nascimento</label>
+            <input type="date" id="birthdate" name="birthdate" value="Sua data de nascimento" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="gender">Sexo</label>
+            <select id="gender" name="gender" class="form-control">
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calcular</button>
+    </form>
+</main>
+#end
