@@ -1,4 +1,4 @@
-#macro(mainLayout)
+#macro( mainLayout )
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
