@@ -1,8 +1,9 @@
 #parse('views/main-layout.vm')
 #@mainLayout()
-<header>
-    <h1>Resultados</h1>
-</header>
+<main class="main">
+    <header>
+        <h1>Resultados</h1>
+    </header>
     <section>
         <h2>Seus dados</h2>
         <dl>
@@ -37,4 +38,7 @@
             </tbody>
         </table>
     </section>
+    
+    <a href="/" class="btn btn-primary">Voltar</a>
+</main>
 #end

@@ -1,16 +1,17 @@
+.main {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: relative;
+    min-height: 73vh;
+}
+
 .footer{
     border-top: solid 1px #ddd;
     padding: 1em;
     font-size: 0.95em;
     text-align: center;
     background: #eeeeee;
-    position: fixed;
-    right: 0;
-    left: 0;
+    position: relative;
     bottom: 0;
-}
-
-.main {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    height: 2.5rem;
 }
