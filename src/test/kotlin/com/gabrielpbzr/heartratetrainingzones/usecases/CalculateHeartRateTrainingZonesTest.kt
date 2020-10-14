@@ -6,11 +6,11 @@ import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class CalculateHeartRateTrainingZonesTest {
-
+    private val birthDate: LocalDate = LocalDate.now().minusYears(31)
     @Test
     fun calculateHeartRateZonesForAMaleUser() {
         val useCase = CalculateHeartRateTrainingZones()
-        val trainingZones = useCase.calculateTrainingZonesForUser(LocalDate.of(1988, 2, 25), Gender.MALE)
+        val trainingZones = useCase.calculateTrainingZonesForUser(birthDate, Gender.MALE)
         val expected = arrayOf(
             HeartRateZone("Zone 1", 113, 123),
             HeartRateZone("Zone 2", 123, 142),
@@ -26,7 +26,7 @@ class CalculateHeartRateTrainingZonesTest {
     @Test
     fun calculateHeartRateZonesForAFemaleUser() {
         val useCase = CalculateHeartRateTrainingZones()
-        val trainingZones = useCase.calculateTrainingZonesForUser(LocalDate.of(1988, 2, 25), Gender.FEMALE)
+        val trainingZones = useCase.calculateTrainingZonesForUser(birthDate, Gender.FEMALE)
         val expected = arrayOf(
             HeartRateZone("Zone 1", 113, 123),
             HeartRateZone("Zone 2", 123, 142),
